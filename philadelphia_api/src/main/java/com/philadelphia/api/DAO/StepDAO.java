@@ -1,6 +1,7 @@
 package com.philadelphia.api.DAO;
 
 import com.philadelphia.api.Database.Steps;
+import com.philadelphia.api.Database.TypesSteps;
 import com.philadelphia.api.Database.Units;
 import com.philadelphia.api.Errors.Failed;
 import org.hibernate.Session;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @Repository
@@ -23,7 +23,7 @@ public class StepDAO {
             throw new Failed("Bad unit number");
         }
         Units unit = units.get(0);
-        Steps step = Steps.builder().video(videoHref).name(name).number(number).build();
+        Steps step = Steps.builder().video(videoHref).name(name).number(number).type(TypesSteps.VIDEO).build();
         unit.addStep(step);
         session.save(step);
     }
@@ -35,7 +35,7 @@ public class StepDAO {
             throw new Failed("Bad unit number");
         }
         Units unit = units.get(0);
-        Steps step = Steps.builder().mdFile(mdHref).name(name).number(number).build();
+        Steps step = Steps.builder().mdFile(mdHref).name(name).type(TypesSteps.MDFILE).number(number).build();
         unit.addStep(step);
         session.save(step);
     }
@@ -47,8 +47,13 @@ public class StepDAO {
             throw new Failed("Bad unit number");
         }
         Units unit = units.get(0);
-        Steps step = Steps.builder().question(fileQuestion).name(name).number(number).build();
+        Steps step = Steps.builder().question(fileQuestion).name(name).type(TypesSteps.QUESTIONS).number(number).build();
         unit.addStep(step);
         session.save(step);
+    }
+    public List<Steps> getStepByNumber(Long number){
+        Session session = entityManager.unwrap(Session.class);
+        return session.createQuery("select step from Steps step where step.number=:number", Steps.class)
+                .setParameter("number", number).getResultList();
     }
 }

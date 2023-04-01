@@ -2,18 +2,21 @@ package com.philadelphia.api.Services;
 
 import com.philadelphia.api.DAO.StepDAO;
 import com.philadelphia.api.DTO.AddStepDTO;
+import com.philadelphia.api.DTO.MDFileStepDTO;
+import com.philadelphia.api.DTO.QuestionStepDTO;
+import com.philadelphia.api.DTO.VideoStepDTO;
+import com.philadelphia.api.Database.Steps;
 import com.philadelphia.api.Errors.Failed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -57,10 +60,41 @@ public class StepService {
                 stepDAO.addQuestionStep(addStepDTO.getName(), addStepDTO.getNumber()
                         , addStepDTO.getUnitNumber(), fileName.toString());
             }
-            case BOSS -> {
-
-            }
             default -> throw new Failed("Bad type of step");
+        }
+    }
+    public Object getStepByNumber(Long number){
+        List<Steps> steps = stepDAO.getStepByNumber(number);
+        if(steps.size()==0){
+            throw new Failed("Doesn't have such step");
+        }
+        Steps step = steps.get(0);
+        switch (step.getType()){
+            case VIDEO -> {
+                return VideoStepDTO.builder().name(step.getName()).video(step.getVideo())
+                        .type(step.getType()).number(step.getNumber()).build();
+            }
+            case MDFILE -> {return MDFileStepDTO.builder().name(step.getName()).mdFile(step.getMdFile())
+                    .type(step.getType()).number(step.getNumber()).build();}
+            case QUESTIONS -> {
+                String question;
+                List<String> options = new ArrayList<>();
+                String correctAnswer;
+                try {
+                    BufferedReader bufferedReader = new BufferedReader(new FileReader("./Questions/" +
+                            step.getQuestion() + ".txt"));
+                    question = bufferedReader.readLine();
+                    for (int i = 0; i < 3; i++) {
+                        options.add(bufferedReader.readLine());
+                    }
+                    correctAnswer = bufferedReader.readLine();
+                } catch (IOException e){
+                    throw new Failed("No such file"); //Проверка на наличие файла
+                }
+                return QuestionStepDTO.builder().name(step.getName()).number(step.getNumber()).type(step.getType())
+                        .question(question).correctAnswer(correctAnswer).options(options).build();
+            }
+            default -> {throw new Failed("Bad type in step");}
         }
     }
 }
