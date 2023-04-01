@@ -5,13 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserInfoDTO {
-    private String login;
+public class AddUnitDTO {
     private String name;
+    private Long number;
 }

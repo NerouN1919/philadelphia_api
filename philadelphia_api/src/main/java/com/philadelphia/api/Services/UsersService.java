@@ -30,16 +30,10 @@ public class UsersService {
         if(exists.size() != 0){
             throw new Failed("Exists this login");
         }
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
-        Date date;
-        try {
-            date = formatter.parse(registerDTO.getBirthday());
-        } catch (ParseException e) {
-            throw new Failed("Bad birthday date");
-        }
         usersDAO.addUser(registerDTO.getLogin(), passwordEncoder.encode(registerDTO.getPassword()),
-                registerDTO.getName(), date, registerDTO.getMale());
+                registerDTO.getName());
     }
+    @Transactional(readOnly = true)
     public IdDTO login(LoginDTO loginDTO){
         List<Users> users = usersDAO.getBylogin(loginDTO.getLogin());
         if(users.size() == 0){
@@ -51,12 +45,13 @@ public class UsersService {
         }
         return new IdDTO(user.getId());
     }
+    @Transactional(readOnly = true)
     public UserInfoDTO getInfo(Long id){
         List<Users> users = usersDAO.getById(id);
         if(users.size() == 0){
             throw new Failed("No such user");
         }
         Users user = users.get(0);
-        return UserInfoDTO.builder().login(user.getLogin()).name(user.getName()).birthday(user.getBirthday()).male(user.getMale()).build();
+        return UserInfoDTO.builder().login(user.getLogin()).name(user.getName()).build();
     }
 }

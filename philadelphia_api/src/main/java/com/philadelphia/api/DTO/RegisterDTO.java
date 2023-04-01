@@ -13,6 +13,4 @@ public class RegisterDTO {
     private String login;
     private String password;
     private String name;
-    private String birthday;
-    private Boolean male;
 }

@@ -17,9 +17,9 @@ import java.util.List;
 public class UsersDAO {
     @Autowired
     private EntityManager entityManager;
-    public void addUser(String login, String passwordHash, String name, Date birthday, Boolean mail){
+    public void addUser(String login, String passwordHash, String name){
         Session session = entityManager.unwrap(Session.class);
-        session.save(Users.builder().login(login).password(passwordHash).name(name).birthday(birthday).male(mail).build());
+        session.save(Users.builder().login(login).password(passwordHash).name(name).build());
     }
     public List<Users> getBylogin(String login){
         Session session = entityManager.unwrap(Session.class);

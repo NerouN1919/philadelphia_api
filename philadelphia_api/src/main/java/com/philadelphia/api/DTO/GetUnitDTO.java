@@ -5,13 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserInfoDTO {
-    private String login;
+public class GetUnitDTO {
     private String name;
+    private Long number;
+    private List<StepDTO> steps;
 }
