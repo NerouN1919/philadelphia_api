@@ -63,8 +63,8 @@ public class StepService {
             default -> throw new Failed("Bad type of step");
         }
     }
-    public Object getStepByNumber(Long number){
-        List<Steps> steps = stepDAO.getStepByNumber(number);
+    public Object getStepByNumber(Long number, Long numberUnit){
+        List<Steps> steps = stepDAO.getStepByNumberAndNumberUnit(number, numberUnit);
         if(steps.size()==0){
             throw new Failed("Doesn't have such step");
         }
@@ -89,7 +89,7 @@ public class StepService {
                     }
                     correctAnswer = bufferedReader.readLine();
                 } catch (IOException e){
-                    throw new Failed("No such file"); //Проверка на наличие файла
+                    throw new Failed("No such file"); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 }
                 return QuestionStepDTO.builder().name(step.getName()).number(step.getNumber()).type(step.getType())
                         .question(question).correctAnswer(correctAnswer).options(options).build();

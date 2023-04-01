@@ -51,9 +51,15 @@ public class StepDAO {
         unit.addStep(step);
         session.save(step);
     }
-    public List<Steps> getStepByNumber(Long number){
+    public List<Steps> getStepByNumberAndNumberUnit(Long number, Long numberUnit){
         Session session = entityManager.unwrap(Session.class);
-        return session.createQuery("select step from Steps step where step.number=:number", Steps.class)
-                .setParameter("number", number).getResultList();
+        List<Units> units = session.createQuery("select unit from Units unit where unit.number=:number",
+                Units.class).setParameter("number", numberUnit).getResultList();
+        if(numberUnit == 0){
+            throw new Failed("Bad step");
+        }
+        return session.createQuery("select step from Steps step where " +
+                        "step.number=:number and step.unit =:unit", Steps.class)
+                .setParameter("number", number).setParameter("unit", units.get(0)).getResultList();
     }
 }
