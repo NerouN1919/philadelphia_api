@@ -1,7 +1,7 @@
 # api for hackaton by EEsTech   
 Для запуска в директории с проектом выполнить  
 ```
-./gradlew clean buidl  
+./gradlew clean build  
 docker-compose build
 docker-compose up  
 ```
