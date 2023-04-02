@@ -1,6 +1,6 @@
 # api for hackaton by EEsTech   
 # Structure of DataBase:  
-![изображение](https://user-images.githubusercontent.com/99546572/202892392-7c30a555-504c-44f2-a28c-ec15ad500e8e.png)  
+![изображение](https://user-images.githubusercontent.com/99546572/229333287-95d0cc00-1f82-4aef-8eaf-256f7b35a73d.png) 
 # Список доступных HTTP запросов:  
 ![изображение](https://user-images.githubusercontent.com/99546572/202892436-81019178-c852-4bfc-85bd-5486be8788b5.png)  
 ![изображение](https://user-images.githubusercontent.com/99546572/202892487-27617b62-bab7-456e-8373-63405f399b3c.png)  
