@@ -5,6 +5,9 @@
 docker-compose build
 docker-compose up  
 ```
+Пароль и логин для JWT:  
+**Login:"Admin"**  
+**Password:"12345"**  
 # Structure of DataBase:  
 ![изображение](https://user-images.githubusercontent.com/99546572/229333287-95d0cc00-1f82-4aef-8eaf-256f7b35a73d.png) 
 # Список доступных HTTP запросов:  
