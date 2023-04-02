@@ -3,10 +3,7 @@ package com.philadelphia.api.Services;
 import com.philadelphia.api.DAO.SuccessedDAO;
 import com.philadelphia.api.DAO.UnitDao;
 import com.philadelphia.api.DAO.UsersDAO;
-import com.philadelphia.api.DTO.IdDTO;
-import com.philadelphia.api.DTO.LoginDTO;
-import com.philadelphia.api.DTO.RegisterDTO;
-import com.philadelphia.api.DTO.UserInfoDTO;
+import com.philadelphia.api.DTO.*;
 import com.philadelphia.api.Database.Steps;
 import com.philadelphia.api.Database.Successed;
 import com.philadelphia.api.Database.Units;
@@ -17,6 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -75,5 +75,14 @@ public class UsersService {
     public void addMoneyToUser(Long userId, Long money){
         Users user = usersDAO.getById(userId);
         user.setMoney(user.getMoney() + money);
+    }
+    public List<LeaderBordDTO> getLeaderBord(){
+        List<Users> users = usersDAO.getAllUsers();
+        List<LeaderBordDTO> leaderBord = new ArrayList<>();
+        users.sort((o1, o2) -> (int) (o2.getXp() - o1.getXp()));
+        for(Users user: users){
+            leaderBord.add(LeaderBordDTO.builder().name(user.getName()).xp(user.getXp()).build());
+        }
+        return leaderBord;
     }
 }

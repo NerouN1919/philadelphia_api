@@ -1,15 +1,14 @@
 package com.philadelphia.api.Controllers;
 
-import com.philadelphia.api.DTO.IdDTO;
-import com.philadelphia.api.DTO.LoginDTO;
-import com.philadelphia.api.DTO.RegisterDTO;
-import com.philadelphia.api.DTO.UserInfoDTO;
+import com.philadelphia.api.DTO.*;
 import com.philadelphia.api.Services.UsersService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/users")
@@ -42,5 +41,10 @@ public class UsersController {
     @Operation(summary = "Add xp to user")
     public void addMoneyToUser(@PathVariable("userId") Long userId, @PathVariable("money") Long money){
         usersService.addMoneyToUser(userId, money);
+    }
+    @GetMapping("/leaderBord")
+    @Operation(summary = "Get leader bord of users by xp")
+    public List<LeaderBordDTO> getLeaderBord(){
+        return usersService.getLeaderBord();
     }
 }
