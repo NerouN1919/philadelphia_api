@@ -17,10 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.nio.file.LinkOption;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -69,7 +65,8 @@ public class UsersService {
         if (users == null) {
             throw new Failed("No such user");
         }
-        return UserInfoDTO.builder().login(users.getLogin()).name(users.getName()).build();
+        return UserInfoDTO.builder().login(users.getLogin()).name(users.getName()).xp(users.getXp())
+                .money(users.getMoney()).build();
     }
     public void addXpToUser(Long userId, Long xp){
         Users user = usersDAO.getById(userId);

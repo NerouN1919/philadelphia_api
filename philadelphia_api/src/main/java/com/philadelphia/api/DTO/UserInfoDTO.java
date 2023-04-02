@@ -14,4 +14,6 @@ import java.util.Date;
 public class UserInfoDTO {
     private String login;
     private String name;
+    private Long xp;
+    private Long money;
 }
