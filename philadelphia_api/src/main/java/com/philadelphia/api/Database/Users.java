@@ -29,8 +29,8 @@ public class Users {
     @Column(name = "name")
     @NotEmpty
     private String name;
-    @Column(name = "birthday")
-    private Date birthday;
-    @Column(name = "is_male")
-    private Boolean male;
+    @Column(name = "xp")
+    private Long xp = 0L;
+    @Column(name = "money")
+    private Long money = 0L;
 }

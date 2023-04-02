@@ -33,4 +33,14 @@ public class UsersController {
     public UserInfoDTO getInfo(@PathVariable("id") Long id){
         return usersService.getInfo(id);
     }
+    @GetMapping("addXp/{userId}/{xp}")
+    @Operation(summary = "Add xp to user")
+    public void addXpToUser(@PathVariable("userId") Long userId, @PathVariable("xp") Long xp){
+        usersService.addXpToUser(userId, xp);
+    }
+    @GetMapping("addMoney/{userId}/{money}")
+    @Operation(summary = "Add xp to user")
+    public void addMoneyToUser(@PathVariable("userId") Long userId, @PathVariable("money") Long money){
+        usersService.addMoneyToUser(userId, money);
+    }
 }
