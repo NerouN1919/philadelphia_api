@@ -17,7 +17,7 @@ docker-compose up
 ## curl запросы для наполнения базы данных
 ```
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "name": "Обучить сотрудников ТБ",
@@ -25,7 +25,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "name": "Первичный инструктаж при приеме на работу: инструкции от HR–специалиста",
@@ -33,7 +33,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "name": "Знакомство с Системой RNS Web",
@@ -41,7 +41,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "name": "Знакомство с историей компании и целями",
@@ -49,7 +49,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "name": "Знакомство с отделами и офисом",
@@ -57,7 +57,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/units' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 1,
@@ -68,7 +68,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 1,
@@ -79,7 +79,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 1,
@@ -97,7 +97,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 1,
@@ -115,7 +115,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 2,
@@ -126,7 +126,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 2,
@@ -137,7 +137,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 2,
@@ -155,7 +155,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 3,
@@ -166,7 +166,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 3,
@@ -177,7 +177,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 3,
@@ -195,7 +195,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 4,
@@ -206,7 +206,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 4,
@@ -217,7 +217,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 4,
@@ -228,7 +228,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 4,
@@ -246,7 +246,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 5,
@@ -257,7 +257,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 5,
@@ -268,7 +268,7 @@ curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
 }'
 
 curl --location --request GET 'http://neroun.duckdns.org:8080/api/steps' \
---header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY4MDk1Mjk5NSwicm9sZXMiOlsiQURNSU4iXSwibG9naW4iOiJBZG1pbiJ9.J7cutpYzDLY59rLgDnwTPZxjITVpwe8IF9RGD7QBdKt_o5gw5qwjREM_SOqC0duAmcsFFjfEHKIHf6XLoUDVXw' \
+--header 'Authorization: Bearer {token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "unitNumber": 5,
