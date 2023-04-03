@@ -1,4 +1,4 @@
-# api for hackaton by EEsTech   
+# Api for hackaton by EEsTech   
 Для запуска в директории с проектом выполнить  
 ```
 ./gradlew clean build  
